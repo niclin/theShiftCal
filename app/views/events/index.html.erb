@@ -17,18 +17,12 @@
 
    <tr>
      <% @events.each do |event| %>
-     <td>#</td>
+
      <td><%= link_to(event.summary, event_path(event)) %></td>
      <td><%= event.content %></td>
      <td><%= event.start_time %></td>
      <td><%= event.end_time %></td>
-     <td>
 
-       <%= link_to("Edit", edit_event_path(event), class:"btn btn-sm btn-default")%>
-       <%= link_to("Delete", event_path(event), class:"btn btn-sm btn-default",
-       method: :delete, data: { comfirm: "Are you sure?"} ) %>
-
-     </td>
       <% end %>
    </tr>
 

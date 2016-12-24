@@ -1,35 +1,26 @@
 class EventsController < ApplicationController
 
-  def to_ics
-    event = Icalendar::Event.new
-    event.start = self.date.strftime("%Y%m%dT%H%M%S")
-    event.end = self.end_date.strftime("%Y%m%dT%H%M%S")
-    event.summary = self.title
-    event.description = self.summary
-    event.created = self.created_at
-    event.last_modified = self.updated_at
-    event.uid = event.url = "#{PUBLIC_URL}events/#{self.id}"
-    event.add_comment("AF83 - Shake your digital, we do WowWare")
-    event
-  end
+  # Convert to iCalendar
+
 
   def index
     @events = Event.all
 
   end
+
   def show
     @event = Event.find(params[:id])
-    respond_to do |wants|
-    wants.html
-    wants.ics do
+ 
+  respond_to do |wants|
+   wants.html
+   wants.ics do
      calendar = Icalendar::Calendar.new
      calendar.add_event(@event.to_ics)
      calendar.publish
      render :text => calendar.to_ical
-       end
-     end
-    end
-
+   end
+ end
+end
 
 
   def new
