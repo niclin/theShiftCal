@@ -5,21 +5,19 @@
     <table class="table table-hover">
     <thead>
       <tr>
-        <td>#</td>
+
         <td>summary</td>
-        <td>content</td>
         <td>start_time</td>
         <td>end_time</td>
-
+        <td>Slack ID</td>
       </tr>
     </thead>
     <tbody>
 
-   <tr>
-     <% @events.each do |event| %>
 
+     <% @events.each do |event| %>
+      <tr>
      <td><%= link_to(event.summary, event_path(event)) %></td>
-     <td><%= event.content %></td>
      <td><%= event.start_time %></td>
      <td><%= event.end_time %></td>
 
