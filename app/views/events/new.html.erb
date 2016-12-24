@@ -5,9 +5,10 @@
 
     <%= simple_form_for @event do |e| %>
     <div class="form-group">
-     <%= e.input :start_time, input_html: { class: "form-control"} %>
+      <%= e.input :start_time, input_html: { class: "form-control"} %>
       <%= e.input :end_time, input_html: { class: "form-control"} %>
       <%= e.input :summary, input_html: { class: "form-control"} %>
+      <%= e.input :slack, input_html: { class: "form-control"} %>
       <%= e.submit "Submit", class:"btn btn-primary", data:{ disable_with: "Submitting…"} %>
 
       </div>

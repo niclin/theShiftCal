@@ -10,7 +10,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
- 
+
   respond_to do |wants|
    wants.html
    wants.ics do
@@ -30,7 +30,7 @@ end
 
   def create
     @event = Event.new(event_parmas)
-    if @event.save
+    if @event.save!
       redirect_to events_path
     else
       render :new
@@ -61,7 +61,7 @@ end
  private
 
  def event_parmas
-   params.require(:event).permit(:start_time,:end_time,:summary, :content)
+   params.require(:event).permit(:start_time,:end_time,:summary, :content, :slack)
 
  end
 

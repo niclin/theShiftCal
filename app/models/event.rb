@@ -8,11 +8,10 @@ class Event < ApplicationRecord
         event.created = self.created_at
         event.last_modified = self.updated_at
         #event.url = "#{PUBLIC_URL}events/#{self.id}"
-
         event
       end
 
-    belongs_to :user
+ 
 
 
 
