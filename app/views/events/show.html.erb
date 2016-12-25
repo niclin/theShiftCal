@@ -2,4 +2,5 @@
 <p><%= @event.summary %></p>
 <p><%= @event.start_time%></p>
 <p><%= @event.end_time %></p>
+<p><%= @event.slack.split(/\s*,\s*/)%></p>
 <%= link_to @event.summary, :controller => 'events', :action => :show, :format => :ics %>

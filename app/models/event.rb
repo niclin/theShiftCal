@@ -11,9 +11,10 @@ class Event < ApplicationRecord
         event
       end
 
- 
 
-
+  def slack_list
+    self.slack_list[] = self.slack.split(/\s*,\s*/)
+  end
 
 
 end
