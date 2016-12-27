@@ -4,13 +4,14 @@ class EventsController < ApplicationController
 
 
   def index
+
     if params[:slack]
       @events = Event.booked_with(params[:slack])
 
-    end
+
   else
     @events = Event.all
-
+  end
   end
 
   def show

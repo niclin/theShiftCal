@@ -29,7 +29,7 @@ class Event < ApplicationRecord
 
   end
 
-  def booked_with(name)
+  def self.booked_with(name)
     Slack.find_by_name!(name).events
 
   end
