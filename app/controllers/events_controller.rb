@@ -4,6 +4,11 @@ class EventsController < ApplicationController
 
 
   def index
+    if params[:slack]
+      @events = Event.booked_with(params[:slack])
+
+    end
+  else
     @events = Event.all
 
   end
@@ -61,7 +66,7 @@ end
  private
 
  def event_parmas
-   params.require(:event).permit(:start_time,:end_time,:summary, :content, :slack)
+   params.require(:event).permit(:start_time,:end_time,:summary, :content, :all_slacks)
 
  end
 

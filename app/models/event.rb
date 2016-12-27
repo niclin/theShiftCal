@@ -12,9 +12,26 @@ class Event < ApplicationRecord
       end
 
 
-  def slack_list
-    self.slack_list[] = self.slack.split(/\s*,\s*/)
+
+
+  has_many :shifts
+  has_many :slacks, through: :shifts
+
+  def all_slacks=(names)
+    self.slacks = names.split(",").map do |name|
+      Slack.where(name: name.strip).first_or_create!
+    end
+
   end
 
+  def all_slacks
+    self.slacks.map(&:name).join(", ")
+
+  end
+
+  def booked_with(name)
+    Slack.find_by_name!(name).events
+
+  end
 
 end
