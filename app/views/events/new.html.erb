@@ -1,12 +1,13 @@
 <div class="col-md-4 col-md-offset-4">
-    <h2>New</h2>
+    <h2>Friday 2-4PM</h2>
 
     <hr>
 
     <%= simple_form_for @event,input_html: {remote: true, class: "form-control"}  do |e| %>
     <div class="form-group">
-      <%= e.input :start_time %>
-      <%= e.input :end_time %>
+      <%= e.hidden_field :start_time, value: %>
+      <%= e.hidden_field :end_time, value: %>
+
       <%= e.input :summary%>
       <%= e.input :all_slacks %>
 
