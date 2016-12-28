@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-  # Convert to iCalendar
+
 
 
   def index
@@ -14,19 +14,24 @@ class EventsController < ApplicationController
   end
   end
 
+
+
+
+
+
   def show
     @event = Event.find(params[:id])
 
-  respond_to do |wants|
-   wants.html
-   wants.ics do
-     calendar = Icalendar::Calendar.new
-     calendar.add_event(@event.to_ics)
-     calendar.publish
-     render :text => calendar.to_ical
-   end
- end
-end
+    respond_to do |format|
+      format.html
+      format.ics do
+        cal = Icalendar::Calendar.new
+        cal.add_event(@event.to_ics)
+        cal.publish
+        render :text => cal.to_ical
+      end
+    end
+  end
 
 
   def new

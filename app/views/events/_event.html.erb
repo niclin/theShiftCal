@@ -1,7 +1,8 @@
-<%= div_for event do %>
-
-    <div class="tags">
-      <%=raw event.all_slacks %>
-    </div>
-
-<% end %>
+<% @events.each do |event| %>
+ <tr>
+<td><%= link_to(event.summary, event_path(event)) %></td>
+<td><%= event.start_time %></td>
+<td><%= event.end_time %></td>
+<td><%= link_to event.summary, controller:'events', action: :show, format: :ics, :id => event.id %>
+</td>
+ <% end %>

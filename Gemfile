@@ -34,6 +34,9 @@ gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.43'
 gem 'simple_form'
 gem 'pry'
+gem  'tzinfo'
+gem 'chronic'
+
 
 
 # Use Redis adapter to run Action Cable in production

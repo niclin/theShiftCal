@@ -1,12 +1,15 @@
 class Event < ApplicationRecord
+require 'icalendar/tzinfo'
 
   def to_ics
+
         event = Icalendar::Event.new
-        event.dtstart = self.start_time.strftime("%Y%m%dT%H%M%S")
-        event.dtend = self.end_time.strftime("%Y%m%dT%H%M%S")
+        event.dtstart = Icalendar::Values::DateTime.new self.start_time, tzid: "Asia/Shanghai"
+        event.dtend = Icalendar::Values::DateTime.new self.end_time, tzid: "Asia/Shanghai"
         event.summary = self.summary
         event.created = self.created_at
         event.last_modified = self.updated_at
+
         #event.url = "#{PUBLIC_URL}events/#{self.id}"
         event
       end

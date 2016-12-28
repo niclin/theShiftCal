@@ -14,19 +14,16 @@
         <td>summary</td>
         <td>start_time</td>
         <td>end_time</td>
-        <td>Slack ID</td>
+        <td>Calender</td>
       </tr>
     </thead>
     <tbody>
 
-
-     <% @events.each do |event| %>
-      <tr>
-     <td><%= link_to(event.summary, event_path(event)) %></td>
-     <td><%= event.start_time %></td>
-     <td><%= event.end_time %></td>
-
-      <% end %>
+      <% if @events.present? %>
+     <%= render "event" %>
+     <% else %>
+     <p>No such slack Id</p>
+     <% end %>
    </tr>
 
     </tbody>
