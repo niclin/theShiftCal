@@ -35,7 +35,10 @@ class EventsController < ApplicationController
 
 
   def new
-    @event = Event.new
+    @week_events =[]
+    2.times do
+      @week_events << Event.new
+    end
 
   end
 

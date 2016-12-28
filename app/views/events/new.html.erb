@@ -1,21 +1,101 @@
 <div class="col-md-4 col-md-offset-4">
-    <h2>Friday 2-4PM</h2>
+
+<h2>助教排班表</h2>
+  <%= simple_form_for @week_events.each, url: events_path, input_html: {remote: true, class: "form-control"}  do |e|%>
+
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>2-4PM</th>
+        <th>4-6PM</th>
+        <th>6-8PM</th>
+        <th>8-10PM</th>
+        <th>10-12</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sat</td>
+        <td>Sun</td>
+        <td>Mon</td>
+        <td>Tue</td>
+        <td>Wed</td>
+        <td>Thu</td>
+        <td>Fri</td>
+      </tr>
+      <tr>
+      <td><%= render "shiftform/sat-2-4-form"%></td>
+      <td><%= render "shiftform/sun-2-4-form"%></td>
+      <!-- <td><%= render "shiftform/mon-2-4-form"%></td>
+      <td><%= render "shiftform/tue-2-4-form"%></td>
+      <td><%= render "shiftform/wed-2-4-form"%></td>
+      <td><%= render "shiftform/thu-2-4-form"%></td>
+      <td><%= render "shiftform/fri-2-4-form"%></td>
+      </tr>
+      <tr>
+        <td><%= render "shiftform/sat-4-6-form"%></td>
+        <td><%= render "shiftform/sun-4-6-form"%></td>
+        <td><%= render "shiftform/mon-4-6-form"%></td>
+        <td><%= render "shiftform/tue-4-6-form"%></td>
+        <td><%= render "shiftform/wed-4-6-form"%></td>
+        <td><%= render "shiftform/thu-4-6-form"%></td>
+        <td><%= render "shiftform/fri-4-6-form"%></td>
+      </tr>
+      <tr>
+        <td><%= render "shiftform/sat-6-8-form"%></td>
+        <td><%= render "shiftform/sun-6-8-form"%></td>
+        <td><%= render "shiftform/mon-6-8-form"%></td>
+        <td><%= render "shiftform/tue-6-8-form"%></td>
+        <td><%= render "shiftform/wed-6-8-form"%></td>
+        <td><%= render "shiftform/thu-6-8-form"%></td>
+        <td><%= render "shiftform/fri-6-8-form"%></td>
+      </tr>
+      <tr>
+          <td><%= render "shiftform/sat-8-10-form"%></td>
+          <td><%= render "shiftform/sun-8-10-form"%></td>
+          <td><%= render "shiftform/mon-8-10-form"%></td>
+          <td><%= render "shiftform/tue-8-10-form"%></td>
+          <td><%= render "shiftform/wed-8-10-form"%></td>
+          <td><%= render "shiftform/thu-8-10-form"%></td>
+          <td><%= render "shiftform/fri-8-10-form"%></td>
+
+      </tr>
+      <tr>
+        <td><%= render "shiftform/sat-10-12-form"%></td>
+        <td><%= render "shiftform/sun-10-12-form"%></td>
+        <td><%= render "shiftform/mon-10-12-form"%></td>
+        <td><%= render "shiftform/tue-10-12-form"%></td>
+        <td><%= render "shiftform/wed-10-12-form"%></td>
+        <td><%= render "shiftform/thu-10-12-form"%></td>
+        <td><%= render "shiftform/fri-10-12-form"%></td> -->
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+
+    <!-- <h2>Friday 2-4PM</h2>
 
     <hr>
 
     <%= simple_form_for @event,input_html: {remote: true, class: "form-control"}  do |e| %>
-    <div class="form-group">
-      <%= e.hidden_field :start_time, value: %>
-      <%= e.hidden_field :end_time, value: %>
 
-      <%= e.input :summary%>
-      <%= e.input :all_slacks %>
+      <%= e.hidden_field :start_time, value: set_up_shift_time("This week Friday at 2pm")%>
+      <%= e.hidden_field :end_time, value:set_up_shift_time("This week Friday at 4pm") %>
+
+      <%= e.hidden_field :summary, value:"TA on Fullstack Friday 2-4 pm"%>
+      <%= e.input :all_slacks %> -->
 
       <%= e.submit "Submit", class:"btn btn-primary", data:{ disable_with: "Submitting…"} %>
 
       </div>
     </div>
 
+    <% end %>
 
   <% end %>
 
