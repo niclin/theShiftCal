@@ -16,7 +16,7 @@ require 'icalendar/tzinfo'
 
 
 
-  belongs_to :event
+  belongs_to :week_table,optional: true
   has_many :shifts
   has_many :slacks, through: :shifts
 

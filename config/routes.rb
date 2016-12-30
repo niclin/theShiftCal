@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :events do
+  resources :events
+  resources :week_tables
 
-  end
 
   get 'events/ics_export', to: 'events#ics_export', as: "ics_export"
   root 'events#index'

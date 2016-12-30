@@ -35,10 +35,7 @@ class EventsController < ApplicationController
 
 
   def new
-    @week_events =[]
-    2.times do
-      @week_events << Event.new
-    end
+    @event = Event.new
 
   end
 
@@ -56,7 +53,7 @@ class EventsController < ApplicationController
   end
 
 
-  def updated
+  def update
     @event = Event.find(params[:id])
     if @event.save
       redirect_to event_path(@event)
@@ -75,7 +72,7 @@ class EventsController < ApplicationController
  private
 
  def event_parmas
-   params.require(:event).permit(:start_time,:end_time,:summary, :content, :all_slacks)
+   params.require(:event).permit(:start_time,:end_time,:summary, :content, :all_slacks,:week_table_id)
 
  end
 

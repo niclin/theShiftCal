@@ -1,0 +1,54 @@
+<div class="col-md-4 col-md-offset-4">
+
+<h2>助教排班表</h2>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>2-4PM</th>
+        <th>4-6PM</th>
+        <th>6-8PM</th>
+        <th>8-10PM</th>
+        <th>10-12</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sat</td>
+        <td>Sun</td>
+        <td>Mon</td>
+        <td>Tue</td>
+        <td>Wed</td>
+        <td>Thu</td>
+        <td>Fri</td>
+      </tr>
+      <tr>
+      <%= simple_form_for @week_table do |t| %>
+      <%= t.simple_fields_for :events,input_html: {remote: true, class: "form-control"} do |e| %>
+        <%= e.hidden_field :start_time, value: set_up_shift_time("This week Friday at 2pm")%>
+        <%= e.hidden_field :end_time, value:set_up_shift_time("This week Friday at 4pm") %>
+        <%= e.hidden_field :summary, value:"TA on Fullstack Friday 2-4 pm"%>
+        <%= e.input :all_slacks %>
+      <% end %>
+      <%= t.submit "Submit", class:"btn btn-primary", data:{ disable_with: "Submitting…"} %>
+
+      <% end %>
+
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
