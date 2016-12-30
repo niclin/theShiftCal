@@ -1,24 +1,26 @@
 # README
+This a  calendar exporter prototype transferring the shifts of groups of workers into individual ics events with time zone support.
+The employer enter the string of workers' name (here: slack ids) into the weekly table of working shifts.
+Then every workersjust need to enter their own ids, and get an overview of their shifts everyweek and download the events into their calendars with time zone support.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+DEMO APP: http://shfitcal.heroku.com, used for shift assignments of teaching assisanants at fullstack course.
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+
+
+
+
+
+
+
+
+
+ 
