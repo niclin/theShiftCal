@@ -44,7 +44,7 @@ class WeekTablesController < ApplicationController
   def destroy
     @week_table = WeekTable.find(params[:id])
     @week_table.destroy
-    redirect_to events_path
+    redirect_to new_week_table_path, notice: "reset sucessfully, you can create a shift for a new week "
   end
 
 

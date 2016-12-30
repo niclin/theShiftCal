@@ -7,14 +7,11 @@ class EventsController < ApplicationController
     if params[:slack]
       @events = Event.booked_with(params[:slack])
 
-
   else
     @events = Event.all
   end
 
   end
-
-
 
 
 

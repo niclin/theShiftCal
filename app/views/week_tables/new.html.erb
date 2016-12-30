@@ -1,11 +1,20 @@
-<div class="col-md-4 ">
+<div class="col-md-12 ">
 
-<h2>助教排班表</h2>
 
   <br>
   <%= simple_form_for @week_table do |t| %>
-  <p>Before editing or creating the weely schedule, please do reset and delete the cuurent one</p>
-  <%= link_to "reset the weekly schedule", week_tables_path, class:"btn btn-danger" %>
+  <div class="text-center">
+
+  <p><strong>No edit fuction  here. If you just need edit a single event, go to the index and click the coreresponding event to edit.</strong> Before editing or creating the weely schedule, please <strong>do reset and delete</strong> the current one</p>
+  <%= link_to "Reset the weekly schedule", week_tables_path, class:"btn btn-danger" %>
+  <%= link_to "Edit specific events", events_path, class:"btn btn-success" %>
+  </div>
+  <br>
+  <div class="text-center">
+
+
+  <h2>Shift schedule</h2>
+  </div>
   <table>
     <thead>
       <tr>
@@ -385,18 +394,17 @@
   </td>
     </tr>
 
+  </tbody>
+</table>
 
 
 
 
 
-      <%= t.submit "Create and submit", class:"btn btn-primary pull-right", data:{ disable_with: "Submitting…"} %>
+    <%= t.submit "finish and submit", class:"btn btn-primary pull-right", data:{ disable_with: "Submitting…"} %>
 
       <% end %>
 
-      </tr>
-    </tbody>
-  </table>
 
 
 
