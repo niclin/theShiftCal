@@ -2,8 +2,10 @@
 
 <h2>助教排班表</h2>
 
+  <br>
   <%= simple_form_for @week_table do |t| %>
-   
+  <p>Before editing or creating the weely schedule, please do reset and delete the cuurent one</p>
+  <%= link_to "reset the weekly schedule", week_tables_path, class:"btn btn-danger" %>
   <table>
     <thead>
       <tr>
@@ -388,7 +390,7 @@
 
 
 
-      <%= t.submit "Submit", class:"btn btn-primary", data:{ disable_with: "Submitting…"} %>
+      <%= t.submit "Create and submit", class:"btn btn-primary pull-right", data:{ disable_with: "Submitting…"} %>
 
       <% end %>
 

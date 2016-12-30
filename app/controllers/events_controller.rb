@@ -11,7 +11,7 @@ class EventsController < ApplicationController
   else
     @events = Event.all
   end
-   
+
   end
 
 
@@ -67,6 +67,10 @@ class EventsController < ApplicationController
     @event.destroy
     redirect_to events_path
   end
+    def destroy_all
+      Event.delete_all
+
+    end
 
 
  private

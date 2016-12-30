@@ -18,6 +18,11 @@ class WeekTablesController < ApplicationController
   # end
   #
 
+  def index
+    @week_tables = WeekTable.all
+
+  end
+
   def new
     @week_table = WeekTable.new
    @week_table.events.build
@@ -35,6 +40,11 @@ class WeekTablesController < ApplicationController
       render :new
     end
 
+  end
+  def destroy
+    @week_table = WeekTable.find(params[:id])
+    @week_table.destroy
+    redirect_to events_path
   end
 
 

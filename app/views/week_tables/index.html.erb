@@ -1,0 +1,15 @@
+<h2>reset your weekly schedule </h2>
+
+<tr>
+  <td>#</td>
+  <%=  @week_tables.each do |f| %>
+  <td><%= f.id%></td>
+  <td>
+    <% if current_user %>
+
+    <%= link_to("Reset", week_table_path(f), class:"btn btn-lg btn-default text-center",
+    method: :delete, data: { comfirm: "Are you sure?"} ) %>
+    <% end %>
+    <% end %>
+  </td>
+</tr>
