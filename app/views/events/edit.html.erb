@@ -1,6 +1,11 @@
 <div class="col-md-4 col-md-offset-4">
     <h2>Edit</h2>
-
+    <h3><%= @event.summary %></h3>
     <hr>
-  <%= render "form" %>
+ <%= simple_form_for @event do |e| %>
+  <div class="form-group">
+  <%= e.input :all_slacks,as: :text, input_html: {rows:5}, label: false, placeholder:"e.g: 'yungyuan, yi-hung,frank'"%>
+
+  </div>
+  <% end %>
 </div>
