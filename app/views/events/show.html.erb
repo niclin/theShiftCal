@@ -1,0 +1,6 @@
+<h2>Your event</h2>
+<p><%= @event.summary %></p>
+<p><%= @event.start_time%></p>
+<p><%= @event.end_time %></p>
+<p><%= @event.all_slacks%></p>
+<%= link_to @event.summary, :controller => 'events', :action => :show, :format => :ics %>

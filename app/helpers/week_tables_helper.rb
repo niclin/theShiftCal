@@ -1,0 +1,2 @@
+module WeekTablesHelper
+end
