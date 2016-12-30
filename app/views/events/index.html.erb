@@ -4,7 +4,7 @@
 
 
     <%= form_tag(events_path, method: :get, id: "search_form") do %>
-    <%= text_field_tag :slack, params[:slack], placeholder:"Search your slack id and export your calendar", size:150 %>
+    <%= text_field_tag :slack, params[:slack], placeholder:"Enter your slack id and export your calendar", size:150 %>
     <%= submit_tag "Search" %>
     <% end %>
 
@@ -28,7 +28,7 @@
       <% if @events.present? %>
      <%= render "event" %>
      <% else %>
-     <p>No such slack Id</p>
+      <p>Please enter your slack id</p>
      <% end %>
    </tr>
 
