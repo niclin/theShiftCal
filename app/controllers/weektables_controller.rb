@@ -1,0 +1,2 @@
+class WeektablesController < ApplicationController
+end
