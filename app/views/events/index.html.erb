@@ -1,16 +1,17 @@
 <div class="col-md-12">
-    <%#= link_to("New event", new_event_path, class:"btn btn-primary pull-right") %>
+
   <div id= "custom-search-input">
 
-    <%#= link_to("New event", new_event_path, class:"btn btn-primary pull-right") %>
+
     <%= form_tag(events_path, method: :get, id: "search_form") do %>
     <%= text_field_tag :slack, params[:slack], placeholder:"Search your slack id and export your calendar", size:150 %>
     <%= submit_tag "Search" %>
     <% end %>
 
     </div>
-
-
+    <% if current_user %>
+      <%= link_to("Set up a new weekly shift", new_week_table_path, class:"btn btn-primary pull-right") %>
+      <% end %>
 
     <table class="table table-hover">
     <thead>
@@ -33,5 +34,5 @@
 
     </tbody>
     </table>
-   
+
 </div>
