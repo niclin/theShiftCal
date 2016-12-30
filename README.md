@@ -6,7 +6,7 @@ The employer enter the string of workers' name (here: slack ids) into the weekly
 Then every workersjust need to enter their own ids, and get an overview of their shifts everyweek and download the events into their calendars with time zone support.
 
 
-DEMO APP: http://shfitcal.heroku.com, used for shift assignments of teaching assisanants at fullstack course.
+prototype APP: http://shfitcal.heroku.com, used for shift assignments of teaching assisanants at fullstack course.
 
 
 
