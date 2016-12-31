@@ -122,7 +122,7 @@
     <td><%= t.simple_fields_for :events,input_html: {remote: true } do |e| %>
         <%= e.hidden_field :start_time, value: set_up_shift_time("This week Sunday at 6pm")%>
         <%= e.hidden_field :end_time, value:set_up_shift_time("This week Sunday at 8pm") %>
-        <%= e.hidden_field :summary, value:"TA on Fullstack Sun 6-10 pm"%>
+        <%= e.hidden_field :summary, value:"TA on Fullstack Sun 6-8 pm"%>
           <%= e.input :all_slacks,as: :text, input_html: {rows:5}, label: false, placeholder:"e.g: 'yungyuan, yi-hung,frank'"%>
       <% end %>
     </td>
