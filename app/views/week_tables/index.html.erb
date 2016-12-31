@@ -8,7 +8,7 @@
     <% if current_user %>
 
     <%= link_to("Reset", week_table_path(f), class:"btn btn-lg btn-default text-center",
-    method: :delete, data: { comfirm: "Are you sure?"} ) %>
+    method: :destroy, data: { comfirm: "Are you sure?"} ) %>
     <% end %>
     <% end %>
   </td>
