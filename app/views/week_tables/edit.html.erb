@@ -21,14 +21,14 @@
         <td>Sat</td>
         <td><%= t.simple_fields_for :events,input_html: {remote: true } do |e| %>
           <%= e.hidden_field :start_time, value: set_up_shift_time("This week Saturday at 10am")%>
-          <%= e.hidden_field :end_time, value:set_up_shift_time("This week Saturday at 12am") %>
+          <%= e.hidden_field :end_time, value:set_up_shift_time("This week Saturday at 12pm") %>
           <%= e.hidden_field :summary, value:"TA on Fullstack sat 10-12 am"%>
           <%= e.input :all_slacks,as: :text, input_html: {rows:5}, label: false, placeholder:"e.g: 'yungyuan, yi-hung,frank'"%>
         <% end %>
       </td>
 
       <td><%= t.simple_fields_for :events,input_html: {remote: true } do |e| %>
-        <%= e.hidden_field :start_time, value: set_up_shift_time("This week Saturday at 12am")%>
+        <%= e.hidden_field :start_time, value: set_up_shift_time("This week Saturday at 12pm")%>
         <%= e.hidden_field :end_time, value:set_up_shift_time("This week Saturday at 2pm") %>
         <%= e.hidden_field :summary, value:"TA on Fullstack sat 12-2 pm"%>
         <%= e.input :all_slacks,as: :text, input_html: {rows:5}, label: false, placeholder:"e.g: 'yungyuan, yi-hung,frank'"%>
@@ -65,7 +65,7 @@
           <% end %></td>
         <td>   <%= t.simple_fields_for :events,input_html: {remote: true } do |e| %>
             <%= e.hidden_field :start_time, value: set_up_shift_time("This week Saturday at 10pm")%>
-            <%= e.hidden_field :end_time, value:set_up_shift_time("This week Saturday at 12pm") %>
+            <%= e.hidden_field :end_time, value:set_up_shift_time("This week Saturday at 12am") %>
             <%= e.hidden_field :summary, value:"TA on Fullstack SAT 10-12 pm"%>
               <%= e.input :all_slacks,as: :text, input_html: {rows:5}, label: false, placeholder:"e.g: 'yungyuan, yi-hung,frank'"%>
           <% end %></td>
@@ -77,14 +77,14 @@
 
         <td><%= t.simple_fields_for :events,input_html: {remote: true } do |e| %>
           <%= e.hidden_field :start_time, value: set_up_shift_time("This week Sunday at 10am")%>
-          <%= e.hidden_field :end_time, value:set_up_shift_time("This week Sunday at 12am") %>
+          <%= e.hidden_field :end_time, value:set_up_shift_time("This week Sunday at 12pm") %>
           <%= e.hidden_field :summary, value:"TA on Fullstack Sun 10am - 12am"%>
             <%= e.input :all_slacks,as: :text, input_html: {rows:5}, label: false, placeholder:"e.g: 'yungyuan, yi-hung,frank'"%>
         <% end %>
       </td>
 
       <td><%= t.simple_fields_for :events,input_html: {remote: true } do |e| %>
-        <%= e.hidden_field :start_time, value: set_up_shift_time("This week Sunday at 12am")%>
+        <%= e.hidden_field :start_time, value: set_up_shift_time("This week Sunday at 12pm")%>
         <%= e.hidden_field :end_time, value:set_up_shift_time("This week Sunday at 2pm") %>
         <%= e.hidden_field :summary, value:"TA on Fullstack Sun 12am - 2am"%>
           <%= e.input :all_slacks,as: :text, input_html: {rows:5}, label: false, placeholder:"e.g: 'yungyuan, yi-hung,frank'"%>
@@ -123,7 +123,7 @@
     </td>
     <td><%= t.simple_fields_for :events,input_html: {remote: true } do |e| %>
         <%= e.hidden_field :start_time, value: set_up_shift_time("This week Sunday at 10pm")%>
-        <%= e.hidden_field :end_time, value:set_up_shift_time("This week Sunday at 12pm") %>
+        <%= e.hidden_field :end_time, value:set_up_shift_time("This week Sunday at 11:59pm") %>
         <%= e.hidden_field :summary, value:"TA on Fullstack Sun 10-12 pm"%>
           <%= e.input :all_slacks,as: :text, input_html: {rows:5}, label: false, placeholder:"e.g: 'yungyuan, yi-hung,frank'"%>
       <% end %>
