@@ -5,7 +5,7 @@
  <%= simple_form_for @event do |e| %>
   <div class="form-group">
   <%= e.input :all_slacks,as: :text, input_html: {rows:5}, label: false, placeholder:"e.g: 'yungyuan, yi-hung,frank'"%>
-
+  <%= e.submit %>
   </div>
   <% end %>
 </div>
