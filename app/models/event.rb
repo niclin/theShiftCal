@@ -17,7 +17,7 @@ require 'icalendar/tzinfo'
 
 
   belongs_to :week_table,optional: true
-  has_many :shifts
+  has_many :shifts,dependent: :destroy
   has_many :slacks, through: :shifts
 
   def all_slacks=(names)
