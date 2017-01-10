@@ -10,9 +10,16 @@
 
     <% end %>
   </div>
+<br>
+  <% if current_user %>
+  <div class="group">
+    <%= link_to "Export  all the events", {controller:'events', action: :ics_export, format: :ics}, class: 'btn btn-primary pull-left' %>
 
 
-    <%= link_to "Download all your events this week", controller:'events', action: :ics_export, format: :ics %>
+
+   <%= link_to "Import it into the Google Calendar and post the events to slack", "https://calendar.google.com", class:'btn btn-success pull-right'%>
+  <% end %>
+  </div>
     </div>
 
 
@@ -34,7 +41,9 @@
         <td>Shift</td>
         <td>TAs</td>
         <td>Calendar Download Links</td>
+        <% if current_user %>
         <td>delete</td>
+        <% end %>
       </tr>
     </thead>
     <tbody>
