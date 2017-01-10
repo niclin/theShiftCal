@@ -15,7 +15,7 @@ class EventsController < ApplicationController
 
   def ics_export
 
-    @events = Event.all 
+    @events = Event.all
     respond_to do |format|
       format.html
       format.ics do
@@ -80,10 +80,6 @@ class EventsController < ApplicationController
     redirect_to events_path
   end
 
-  def destroy_all
-    Event.destroy_all
-
-  end
 
 
  private
