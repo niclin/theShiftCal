@@ -1,6 +1,6 @@
 <% @events.each do |event| %>
  <tr>
-<td><%= link_to event.start_time, edit_event_path(event) %></td>
+<td><%= link_to event.start_time.strftime('%m/%d %H %A'), edit_event_path(event) %></td>
 <td><%=  event.all_slacks%>
 <td><%= link_to event.summary, controller:'events', action: :show, format: :ics, :id => event.id %>
 </td>

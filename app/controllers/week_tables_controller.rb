@@ -53,6 +53,6 @@ class WeekTablesController < ApplicationController
     def week_table_params
 
        params.require(:week_table).permit!
-     end
+    end
 
 end
