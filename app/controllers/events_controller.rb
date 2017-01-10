@@ -15,8 +15,7 @@ class EventsController < ApplicationController
 
   def ics_export
 
-    @events = Event.booked_with(params[:slack])
-
+    @events = Event.all 
     respond_to do |format|
       format.html
       format.ics do
