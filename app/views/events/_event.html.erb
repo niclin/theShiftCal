@@ -3,6 +3,9 @@
 <td><%= link_to event.start_time.strftime('%m/%d %H %A'), edit_event_path(event) %></td>
 <td><%=  event.all_slacks%>
 <td><%= link_to event.summary, controller:'events', action: :show, format: :ics, :id => event.id %>
+<% if current_user %>
+<td><%= link_to "Delete", event_path(event), method: :delete, :data=>{ :confirm =>"Are you sure?"} %></td>
+<% end %>
 </td>
 </tr>
  <% end %>
