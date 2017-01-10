@@ -7,13 +7,13 @@ require 'icalendar/tzinfo'
         event.dtstart = Icalendar::Values::DateTime.new self.start_time, tzid: "Asia/Shanghai"
         event.dtend = Icalendar::Values::DateTime.new self.end_time, tzid: "Asia/Shanghai"
         event.summary = self.summary
+        event.description = self.calendar_description
         event.created = self.created_at
         event.last_modified = self.updated_at
 
         #event.url = "#{PUBLIC_URL}events/#{self.id}"
         event
   end
-
 
 
   belongs_to :week_table,optional: true
@@ -26,6 +26,12 @@ require 'icalendar/tzinfo'
     end
 
   end
+
+  def calendar_description
+     self.slacks.map{|slack| slack.name.prepend("@")}.join(", ")
+
+  end
+
 
   def all_slacks
     self.slacks.map(&:name).join(", ")
