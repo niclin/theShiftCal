@@ -17,8 +17,8 @@
   <br>
 
     <% if current_user %>
-    <%= link_to "Download all your events this week", controller:'events', action: :ics_export, format: :ics,class:"btn btn-primary pull-left" %>
-      <%= link_to("Set up a new weekly shift", new_week_table_path, class:"btn btn-primary pull-right") %>
+    <%= link_to "Download all your events this week", controller:'events', action: :ics_export, format: :ics %>
+    <%= link_to("Set up a new weekly shift", new_week_table_path, class:"btn btn-primary pull-right") %>
 
       <% end %>
       <br>
