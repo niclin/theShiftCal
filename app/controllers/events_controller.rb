@@ -7,12 +7,28 @@ class EventsController < ApplicationController
     if params[:slack]
       @events = Event.booked_with(params[:slack])
 
-  else
-    @events = Event.all
-  end
+    else
+      @events = Event.all
+    end
 
   end
 
+  def ics_export
+
+    @events = Event.booked_with(params[:slack])
+
+    respond_to do |format|
+      format.html
+      format.ics do
+        cal = Icalendar::Calendar.new
+        @events.each do |event|
+          cal.add_event(event.to_ics)
+          cal.publish
+        end
+        render :text => cal.to_ical
+      end
+    end
+  end
 
 
 
@@ -65,10 +81,10 @@ class EventsController < ApplicationController
     redirect_to events_path
   end
 
-    def destroy_all
-      Event.destroy_all
+  def destroy_all
+    Event.destroy_all
 
-    end
+  end
 
 
  private

@@ -12,7 +12,7 @@ require 'icalendar/tzinfo'
 
         #event.url = "#{PUBLIC_URL}events/#{self.id}"
         event
-      end
+  end
 
 
 
