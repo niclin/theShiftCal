@@ -28,7 +28,7 @@ require 'icalendar/tzinfo'
   end
 
   def calendar_description
-     self.slacks.map{|slack| slack.name.prepend("@")}.join(", ")
+     self.slacks.map{|slack| slack.name.downcase.prepend("@")}.join(", ")
 
   end
 
