@@ -5,12 +5,18 @@
 
 
     <%= form_tag(events_path, method: :get) do %>
-    <%= text_field_tag :slack, params[:slack], class:"form-control input-lg",placeholder:"Enter your slack id and export your calendar", size:100 %>
-    <%= submit_tag "Search", class:"form-control btn btn-info" %>
+
+    <%= text_field_tag :slack, params[:slack], class:"form-control input-lg",placeholder:"Enter your slack id", size:80 %>
+    <br>
+
+    <%= select_tag :format, options_for_select([["I want to export all my shifts of this week into my calendar", "ics"],["Just check my shifts on page", "html"]], "Export all your events of this week"), class:"form-control " %>
+    <br>
+    <%= submit_tag "Search and export your events", class:"form-control btn btn-info" %>
 
     <% end %>
   </div>
 <br>
+
 
   <% if current_user %>
   <div class="group">
