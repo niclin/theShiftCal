@@ -41,25 +41,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def my_ics_export
-
-
-
-
-    respond_to do |format|
-      format.html
-      format.ics do
-        cal = Icalendar::Calendar.new
-        @events.each do |event|
-          cal.add_event(event.to_ics)
-          cal.publish
-        end
-        render :text => cal.to_ical
-      end
-    end
-
-  end
-
+ 
   def show
     @event = Event.find(params[:id])
 
