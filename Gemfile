@@ -30,11 +30,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'icalendar'
-gem 'momentjs-rails', '>= 2.9.0'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.17.43'
 gem 'simple_form'
 gem 'pry'
-gem  'tzinfo'
+gem 'tzinfo'
 gem 'chronic'
 
 
