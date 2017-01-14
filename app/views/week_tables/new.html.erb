@@ -72,7 +72,7 @@
         <td>   <%= t.simple_fields_for :events,input_html: {remote: true } do |e| %>
             <%= e.hidden_field :start_time, value: set_up_shift_time("This week Saturday at 8pm")%>
             <%= e.hidden_field :end_time, value:set_up_shift_time("This week Saturday at 10pm") %>
-            <%= e.hidden_field :summary, value:" 4pm-6 pm 值班助教"%>
+            <%= e.hidden_field :summary, value:" 10pm-12pm 值班助教"%>
               <%= e.input :all_slacks,as: :text, input_html: {rows:5}, label: false, placeholder:"e.g: 'yungyuan, yi-hung,frank'"%>
           <% end %></td>
         <td>   <%= t.simple_fields_for :events,input_html: {remote: true } do |e| %>
