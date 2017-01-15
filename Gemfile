@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'pry'
 gem 'tzinfo'
 gem 'chronic'
+gem 'bullet', group: :development
 
 
 
