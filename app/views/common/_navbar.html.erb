@@ -2,12 +2,15 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          
+
             <a class="navbar-brand" href="/">ShfitCal </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-left">
+            <li><%= link_to '行事曆', calendar_events_path %></li>
+          </ul>
           <ul class="nav navbar-nav navbar-right">
               <li>
                 <% if !current_user %>

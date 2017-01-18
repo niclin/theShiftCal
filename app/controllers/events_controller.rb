@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, except:[:show, :index]
+  before_action :authenticate_user!, except:[:show, :index, :calendar]
 
 
   def index
@@ -91,8 +91,6 @@ class EventsController < ApplicationController
     @event.destroy
     redirect_to events_path
   end
-
-
 
   private
 
