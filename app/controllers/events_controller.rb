@@ -13,6 +13,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       format.html
+      format.json  { render :json => custom_json_for(@events) }
       format.ics do
         cal = Icalendar::Calendar.new
         @events.each do |event|
@@ -93,12 +94,31 @@ class EventsController < ApplicationController
 
 
 
- private
+  private
 
- def event_parmas
-   params.require(:event).permit(:start_time,:end_time,:summary, :content, :all_slacks,:week_table_id)
+  def event_parmas
+    params.require(:event).permit(:start_time,:end_time,:summary, :content, :all_slacks,:week_table_id)
+  end
 
- end
+  def custom_json_for(value)
+    list = value.map do |event|
+      {
+        :allDay => "",
+        :title => event.all_slacks.to_s,
+        :id => " #{event.id}",
+        :start => event.start_time.to_s,
+        :end => event.end_time.to_s,
+        :color => calendar_color(event)
+      }
+    end
+    list.to_json
+  end
 
+  def calendar_color(event)
+    case event.summary[0,4]
+    when '10am'
+      'green'
+    end
+  end
 
 end
