@@ -34,8 +34,7 @@ require 'icalendar/tzinfo'
 
 
   def all_slacks
-    self.slacks.map(&:name).join(", ")
-
+    slacks.select("name").map(&:name).join(", ")
   end
 
   def self.booked_with(name)

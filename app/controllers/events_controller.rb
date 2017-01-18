@@ -5,10 +5,9 @@ class EventsController < ApplicationController
   def index
 
     if params[:slack]
-      @events = Event.includes(:slacks).booked_with(params[:slack])
-
+      @events = Event.booked_with(params[:slack])
     else
-      @events = Event.includes(:slacks).all
+      @events = Event.all
     end
 
     respond_to do |format|
@@ -27,7 +26,7 @@ class EventsController < ApplicationController
 
   def ics_export
 
-    @events = Event.includes(:slacks).all
+    @events = Event.all
     respond_to do |format|
       format.html
       format.ics do
